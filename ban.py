@@ -55,36 +55,11 @@ for x in Var.SUDO:
 
 
 
-@Ayu.on(events.NewMessage(pattern="^/ping"))
-async def ping(e):
-    if e.sender_id in SUDO_USERS:
-        start = datetime.now()
-        text = "Pong!"
-        event = await e.reply(text, parse_mode=None, link_preview=None)
-        end = datetime.now()
-        ms = (end - start).microseconds / 1000
-        await event.edit(f"**I'm On** \n\n __Pong__ !! `{ms}` ms")
 
 
 
-@Ayu.on(events.NewMessage(pattern='/start'))
-async def start_command(event):
-    # Send a picture and start message
-    await event.respond(
-        "Welcome to the Ban All Bot!\n"
-        "This bot is designed to ban and unban users in groups",
-        buttons=[
-            [Button.url("Support Channel", url="https://t.me/venomOwners")],
-            [Button.url("Support Group", url="https://t.me/venom_chatz")],
-        ],
-        file='https://te.legra.ph/file/310a7fad596b00513692a.jpg',  # Replace with your image URL
-    )
 
-
-                        
-
-
-
+            
 
 @Ayu.on(events.NewMessage(pattern="^/kickall"))
 async def kickall(event):
